@@ -1,5 +1,5 @@
 /* Style the top navigation bar */
-.navbar{
+    .navbar{
 	
     overflow: hidden;
     background-color: white;
@@ -18,7 +18,7 @@
     
     /* Right-aligned link */
     .navbar a.right {
-            background-color: red;
+      background-color: red;
       float: right;
       background-color: black;
       color: white;
@@ -36,4 +36,14 @@
       background: #ddd;
      
     }
-    
+    .fotbar{
+        
+        
+    }
+    .fotbar a{
+      text-decoration: none;
+      display: inline;
+      color: black;
+      text-align: center;
+      background-color: white;
+    }    
