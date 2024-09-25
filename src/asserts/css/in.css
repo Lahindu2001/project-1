@@ -126,15 +126,17 @@ h2, h3 {
 }
 
 table {
-    width: 100%;
+    
+  width: 100%;
     border-collapse: collapse;
     margin-bottom: 40px;
 }
 table, th, td {
-    border: 1px solid #ddd;
+   
+    border: 2px solid #ddd;
 }
 th, td {
-    padding: 12px;
+    padding: 20px;
     text-align: left;
 }
 th {
@@ -169,7 +171,8 @@ td {
     .navi li {
         text-align: center;
         float: none;
-    }
+    } 
+
 }
 
 .scrollmenu {
@@ -188,3 +191,4 @@ td {
 .scrollmenu a:hover {
     background-color: #777;
 }
+
