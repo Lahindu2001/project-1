@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Information Form</title>
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff; 
+            background-color: #3de2e2; 
             margin: 0;
             padding: 0;
             display: flex;
@@ -22,7 +22,7 @@
         }
 
         form {
-            background-color: #ffffff; 
+            background-color: #d57272 ; 
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -48,7 +48,7 @@
         }
 
         input[type="submit"] , input[type="reset"] {
-            background-color: #0056b3;
+            background-color:#9c4444;
             color: white;
             cursor: pointer;
             font-weight: bold;
@@ -60,21 +60,22 @@
 
         select {
             background-color: white;
-            color: #0056b3;
+            color: #5b3c3c;
         }
     </style>
+    <title>Update user detail</title>
 </head>
 <body>
-
+    
 <?php 
     require 'config.php';
 ?>
+    <fieldset>
+        <legend>update customer Deatil</legend>
+        <form  method ="get" action ="update_1.php">
 
-<form  method ="post" action ="insert.php">
-        <h1>User Information</h1>
-
-        <!--<label>User ID:</label>
-        <input type="text" id="userid" name="userid" > -->
+        <label>User ID:</label>
+        <input type="text" id="userid" name="userid" >
 
         <label >Name:</label>
         <input type="text" id="name" name="name" >
@@ -98,6 +99,12 @@
 
         <input type="submit" value="Submit">
         <input type="reset" value="reset">
-    </form>
+        </form>
+     </fieldset>
+
+
+
+
+        
 </body>
 </html>

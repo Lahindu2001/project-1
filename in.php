@@ -43,26 +43,46 @@
         <div class="section">
             <h3>Manage Users</h3>
             <table>
+                <div class="table">
+                <?php
 
-                <tr>
-                    <th>User ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Adress</th>
-                    <th>plan type</th>
-                </tr>
+                require 'config.php';
+                $sql = "SELECT User_ID,Name,email,Phone,Address,Plane_Type from userdetail";
+
+                $result =$con->query($sql);
+                echo "<table border='1'";
+
+
+                    echo "<tr><th>User ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Adress</th><th>plane type</th><th>Action</th>";
+                        while($row = $result->fetch_assoc()){
+                        echo"<tr >";
+                        echo "<td >".$row["User_ID"]."</td>"."<td>".$row["Name"]."</td>"."<td>".$row["email"]."</td>". "<td>".$row["Phone"]."</td>"."<td>".$row["Address"]."</td>"."<td>".$row["Plane_Type"]."</td>";
+                        echo "<td>
+                        <form action='deleted1.php' method='POST'>
+                            <input type='hidden' name='delete' value='" . $row["User_ID"] . "'>
+                            <input type='submit' value='Delete'class='btn btn-delete'>
+
+                        </form>
+                         <form action='updatemain.php' method='POST'>
+                            <input type='hidden' name='update' value='" . $row["User_ID"] . "'>
+                            <input type='submit' value='Update'class='btn btn-edit'>
+
+                        </form>
+                      </td>";
+
+                    echo "</tr>";
+                    }
+                 
+                ?>
             </table>
-            <button class="btn btn-add"><a href ="http://localhost/admin/adduserform.php" target="_blank">ADD User</a></button>
-            <button class="btn btn-delete"><a href ="#" target="_blank">Delete User</a></button>
-            <button class="btn btn-edit"><a href ="#" target="_blank">Edit detail User</a></button>
+            </div>
+            <a href="http://localhost/admin/adduserform.php" ><button class="btn btn-add">ADD User</button></a>
         </div>
 
         <!-- Manage Fees Section -->
         <div class="section">
             <h3>Manage Fees</h3>
             <table>
-
                 <tr>
                     <th>Fee ID</th>
                     <th>Description</th>
@@ -70,10 +90,6 @@
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
-
-
-
-
             </table>
         </div>
 

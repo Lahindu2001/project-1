@@ -1,17 +1,17 @@
 <?php
     require 'config.php';
     
-    $userId = $_POST["userid"];
    $userName = $_POST["name"];
    $userEmail  = $_POST["email"];
    $userphone  = $_POST["phone"];
    $userAdress  = $_POST["address"];
    $userplanetype  = $_POST["planetype"];
 
-   $sql = "INSERT INTO userdetail VALUES ('$userId','$userName','$userEmail','$userphone' , '$userAdress' ,'$userplanetype')";
+   $sql = "INSERT INTO userdetail VALUES ('','$userName','$userEmail','$userphone' , '$userAdress' ,'$userplanetype')";
 
    if($con->query($sql)){
-    echo "insert done";
+    header("Location: http://localhost/admin/in.php");
+    exit(); 
    }
    else{
     echo "Error".$con->error;
@@ -19,3 +19,6 @@
 
    $con->close();
 ?>
+
+
+<!-- sg;sdnvlsnfdvlknlznvlkdnfvlsk -->
