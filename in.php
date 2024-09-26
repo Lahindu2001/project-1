@@ -63,7 +63,7 @@
                             <input type='submit' value='Delete'class='btn btn-delete'>
 
                         </form>
-                         <form action='updatemain.php' method='POST'>
+                         <form action='updatemain1.php' method='POST'>
                             <input type='hidden' name='update' value='" . $row["User_ID"] . "'>
                             <input type='submit' value='Update'class='btn btn-edit'>
 
@@ -79,19 +79,24 @@
             <a href="http://localhost/admin/adduserform.php" ><button class="btn btn-add">ADD User</button></a>
         </div>
 
-        <!-- Manage Fees Section -->
+
+
+        <!-- Manage cliam Section -->
         <div class="section">
-            <h3>Manage Fees</h3>
+            <h3>Manage cliam</h3>
             <table>
                 <tr>
-                    <th>Fee ID</th>
-                    <th>Description</th>
+                    <th>claimId</th>
+                    <th>User ID</th>
                     <th>Amount</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </table>
-        </div>
+                    <th>claimDescription</th>
+                    <th>Date</th>
+                    <th>status</th>
+                    <th>Admin ID</th>
+
+                    </tr>
+                </table>
+                </div>  
 
         <!-- Manage Employees Section -->
         <div class="section">
