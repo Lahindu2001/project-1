@@ -1,13 +1,13 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #3de2e2; 
+            background-color: #f0f8ff; 
             margin: 0;
             padding: 0;
             display: flex;
@@ -22,7 +22,7 @@
         }
 
         form {
-            background-color: #d57272 ; 
+            background-color: #ffffff; 
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -48,34 +48,33 @@
         }
 
         input[type="submit"] , input[type="reset"] {
-            background-color:#9c4444;
+            background-color: #0056b3;
             color: white;
             cursor: pointer;
             font-weight: bold;
         }
 
-        input[type="submit"]:hover , nput[type="reset"]:hover{
+        input[type="submit"]:hover , input[type="reset"]:hover{
             background-color: #004494; 
         }
 
         select {
             background-color: white;
-            color: #5b3c3c;
+            color: #0056b3;
         }
     </style>
-    <title>Update user detail</title>
 </head>
 <body>
-    
+
 <?php 
     require 'config.php';
 ?>
-    <fieldset>
-        <legend>update customer Deatil</legend>
-        <form  method ="get" action ="update_1.php">
 
-        <label>User ID:</label>
-        <input type="text" id="userid" name="userid" >
+<form  method ="post" action ="insert.php">
+        <h1>User Information</h1>
+
+        <!-- <label>User ID:</label>
+        <input type="text" id="userid" name="userid" > -->
 
         <label >Name:</label>
         <input type="text" id="name" name="name" >
@@ -99,12 +98,6 @@
 
         <input type="submit" value="Submit">
         <input type="reset" value="reset">
-        </form>
-     </fieldset>
-
-
-
-
-        
+    </form>
 </body>
 </html>

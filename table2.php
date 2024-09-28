@@ -35,34 +35,32 @@
 
 
         <!-- Manage cliam Section -->
-        
-
-        <!-- Manage Employees Section -->
         <div class="section">
-            <h3>Manage Employee</h3>
+            <h3>Manage claim</h3>
             <table>
                 <div class="table">
                 <?php
 
                 require 'config.php';
-                $sql = "SELECT employeeID,name,email,dob,address,nic,adminId from employee";
+
+                $sql = "SELECT claimId,userId,amount,claimDescription,date,status,adminId from claim";
 
                 $result =$con->query($sql);
                 echo "<table border='1'>";
 
 
-                    echo "<tr><th>Employee Id</th><th>Name</th><th>Email adress</th><th>date of birth</th><th>Adress</th><th>NIC</th><th>Admin Id</th><th>Action</th>";
+                    echo "<tr><th>claim Id</th><th>User ID</th><th>Amount</th><th>claim Description</th><th>Date</th><th>status</th><th>Admin ID</th><th>Action</th>";
                         while($row = $result->fetch_assoc()){
                         echo"<tr >";
-                        echo "<td >".$row["employeeID"]."</td>"."<td>".$row["name"]."</td>"."<td>".$row["email"]."</td>"."<td>".$row["dob"]."</td>"."<td>".$row["address"]."</td>"."<td>".$row["nic"]."</td>"."<td>".$row["adminId"]."</td>";
+                        echo "<td >".$row["claimId"]."</td>"."<td>".$row["userId"]."</td>"."<td>".$row["amount"]."</td>". "<td>".$row["claimDescription"]."</td>"."<td>".$row["date"]."</td>"."<td>".$row["status"]."</td>"."<td>".$row["adminId"]."</td>";
                         echo "<td>
-                        <form action='deleted3.php' method='POST'>
-                            <input type='hidden' name='delete' value='" . $row["employeeID"] . "'>
+                        <form action='deleted2.php' method='POST'>
+                            <input type='hidden' name='delete' value='" . $row["claimId"] . "'>
                             <input type='submit' value='Delete'class='btn btn-delete'>
 
                         </form>
-                         <form action='updatemain3.php' method='POST'>
-                            <input type='hidden' name='update' value='" . $row["employeeID"] . "'>
+                         <form action='updatemain2.php' method='POST'>
+                            <input type='hidden' name='update' value='" . $row["claimId"] . "'>
                             <input type='submit' value='Update'class='btn btn-edit'>
 
                         </form>
@@ -74,10 +72,6 @@
                 ?>
             </table>
             </div>
-            <center><a href="adduserform3.php" ><button class="btn btn-add">ADD New Employee</button></a></center>
+            <center><a href="adduserform2.php" ><button class="btn btn-add">ADD New Claim</button></a></center>
         </div>
-    </div>
-
-</body>
-
-</html>
+    </body>

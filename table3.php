@@ -29,15 +29,6 @@
 
 
     <div class="main-content">
-
-        <!-- Manage Users Section -->
-        
-
-
-        <!-- Manage cliam Section -->
-        
-
-        <!-- Manage Employees Section -->
         <div class="section">
             <h3>Manage Employee</h3>
             <table>

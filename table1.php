@@ -27,42 +27,35 @@
         <a href="#"> Logout</a>
     </div>
 
-
     <div class="main-content">
 
         <!-- Manage Users Section -->
-        
-
-
-        <!-- Manage cliam Section -->
-        
-
-        <!-- Manage Employees Section -->
         <div class="section">
-            <h3>Manage Employee</h3>
+            <br>
+            <h3 >Manage Users</h3>
             <table>
-                <div class="table">
+                <div class="table" >
                 <?php
 
                 require 'config.php';
-                $sql = "SELECT employeeID,name,email,dob,address,nic,adminId from employee";
+                $sql = "SELECT User_ID,Name,email,Phone,Address,Plane_Type from userdetail";
 
                 $result =$con->query($sql);
                 echo "<table border='1'>";
 
 
-                    echo "<tr><th>Employee Id</th><th>Name</th><th>Email adress</th><th>date of birth</th><th>Adress</th><th>NIC</th><th>Admin Id</th><th>Action</th>";
+                    echo "<tr><th>User ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Adress</th><th>plane type</th><th>Action</th>";
                         while($row = $result->fetch_assoc()){
-                        echo"<tr >";
-                        echo "<td >".$row["employeeID"]."</td>"."<td>".$row["name"]."</td>"."<td>".$row["email"]."</td>"."<td>".$row["dob"]."</td>"."<td>".$row["address"]."</td>"."<td>".$row["nic"]."</td>"."<td>".$row["adminId"]."</td>";
+                        echo"<tr>";
+                        echo "<td >".$row["User_ID"]."</td>"."<td>".$row["Name"]."</td>"."<td>".$row["email"]."</td>". "<td>".$row["Phone"]."</td>"."<td>".$row["Address"]."</td>"."<td>".$row["Plane_Type"]."</td>";
                         echo "<td>
-                        <form action='deleted3.php' method='POST'>
-                            <input type='hidden' name='delete' value='" . $row["employeeID"] . "'>
+                        <form action='deleted1.php' method='POST'>
+                            <input type='hidden' name='delete' value='" . $row["User_ID"] . "'>
                             <input type='submit' value='Delete'class='btn btn-delete'>
 
                         </form>
-                         <form action='updatemain3.php' method='POST'>
-                            <input type='hidden' name='update' value='" . $row["employeeID"] . "'>
+                         <form action='updatemain1.php' method='POST'>
+                            <input type='hidden' name='update' value='" . $row["User_ID"] . "'>
                             <input type='submit' value='Update'class='btn btn-edit'>
 
                         </form>
@@ -74,10 +67,7 @@
                 ?>
             </table>
             </div>
-            <center><a href="adduserform3.php" ><button class="btn btn-add">ADD New Employee</button></a></center>
+            <center><a href="adduserform1.php" ><button class="btn btn-add">ADD new User</button></a></center>
         </div>
-    </div>
 
-</body>
-
-</html>
+    </body>
