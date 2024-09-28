@@ -35,9 +35,9 @@
         }
 
         input[type="text"],
-        input[type="email"],
-        input[type="tel"],
         input[type="submit"],
+        input[type="date"],
+        input[type="number"],
         select {
             width: 100%;
             padding: 10px;
@@ -70,30 +70,36 @@
     require 'config.php';
 ?>
 
-<form  method ="post" action ="insert.php">
+<form  method ="post" action ="insert2.php">
         <h1>User Information</h1>
+<!-- 
+        <label>Clam ID:</label>
+        <input type="text" id="claimId" name="claimId" > -->
 
-        <!--<label>User ID:</label>
-        <input type="text" id="userid" name="userid" > -->
+        <label >user Id:</label>
+        <input type="text" id="userId" name="userId" >
 
-        <label >Name:</label>
-        <input type="text" id="name" name="name" >
+        <label >clam amount:</label>
+        <input type="number" id="amount" name="amount" min="0" step="0.01" placeholder="0.00">
+     
+        <label >claim Description:</label>
+        <input type="text" id="claimDescription" name="claimDescription" >
 
-        <label >Email:</label>
-        <input type="email" id="email" name="email" >
+        <label >date:</label>
+        <input type="date" id="date" name="date" >
+        
+        <label for="status">status:</label>
+        <select id="status" name="status" required>
+            <option value="LEVEL_1">LEVEL 1</option>
+            <option value="LEVEL_2">LEVEL 2</option>
+            <option value="LEVEL_3">LEVEL 3</option>
+        </select>
 
-        <label >Phone:</label>
-        <input type="tel" id="phone" name="phone" >
-
-        <label >Address:</label>
-        <input type="text" id="address" name="address" >
-
-        <label for="planetype">Plan type:</label>
-        <select id="planetype" name="planetype" required>
-            <option value="Family_all">Family all in one plan</option>
-            <option value="Emergency">Emergency coverage plan</option>
-            <option value="Elder">Elder Critizen</option>
-            <option value="complete">complete coverage</option>
+        <label for="adminId">admin Id:</label>
+        <select id="adminId" name="adminId">
+            <option value="Admin 1">ADMIN 1</option>
+            <option value="Admin 2">ADMIN 2</option>
+            <option value="Admin 3">ADMIN 3</option>
         </select>
 
         <input type="submit" value="Submit">
@@ -101,3 +107,4 @@
     </form>
 </body>
 </html>
+    

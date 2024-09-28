@@ -14,12 +14,12 @@ if(empty($userId)||empty($userName)||empty($userEmail)||empty($userphone)||empty
 }
 else{
 
-$sql = "UPDATE userdetail set User_ID='$userId' , Name='$userName' , email ='$userEmail' , Address= '$userAdress' , Plane_Type = '$userplanetype' WHERE User_ID='$userId'";
+$sql = "UPDATE userdetail set User_ID='$userId' , Name='$userName' , email ='$userEmail' ,Phone= '$userphone', Address= '$userAdress' , Plane_Type = '$userplanetype' WHERE User_ID='$userId'";
 
 if($con->query($sql))
 {
       
-header("Location: http://localhost/admin/in.php");
+header("Location: table1.php");
 exit();
 
 /*echo "updated"; */

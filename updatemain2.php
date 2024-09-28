@@ -34,10 +34,11 @@
             font-weight: bold;
         }
 
+      
         input[type="text"],
-        input[type="email"],
-        input[type="tel"],
         input[type="submit"],
+        input[type="date"],
+        input[type="number"],
         select {
             width: 100%;
             padding: 10px;
@@ -46,6 +47,7 @@
             border: 1px solid #0056b3;
             box-sizing: border-box;
         }
+
 
         input[type="submit"] , input[type="reset"] {
             background-color:#9c4444;
@@ -72,56 +74,66 @@
 
     $nic =$_POST["update"];
 
-    $sql = "SELECT User_ID,Name,email,Phone,Address,Plane_Type from userdetail where User_ID ='$nic'";
+    $sql = "SELECT claimId,userId,amount,claimDescription,date,status,adminId from claim where claimId ='$nic'";
 
     $result =$con->query($sql);
+
             while($row = $result->fetch_assoc()){
             
-            $uid =  $row["User_ID"];
-           $uname = $row["Name"];
-           $uemail = $row["email"];
-           $uphone = $row["Phone"];
-           $address = $row["Address"];
-           $planeT = $row["Plane_Type"];
-
+            $claimId =  $row["claimId"];
+           $userId = $row["userId"];
+           $clamAmount = $row["amount"];
+           $claimDis = $row["claimDescription"];
+           $clamDate = $row["date"];
+           $claimStatus = $row["status"];
+           $adminId = $row["adminId"];
+          
             }
 
             
      echo"      
     <fieldset>
         <legend>update customer Deatil</legend>
-        <form  method ='get' action ='update_1.php'>
+        <form  method ='get' action ='update_2.php'>
 
-        <input type='hidden' id='userid' name='userid' value = '$uid' > 
+        <input type='hidden' id='claimId' name='claimId' value='$claimId' > 
+        
+        <label >user Id:</label>
+        <input type='text' id='userId' name='userId' value='$userId'>
 
-        <label >Name:</label>
-        <input type='text' id='name' name='name' value='$uname'>
+        <label >clam amount:</label>
+        <input type='number' id='amount' name='amount' min='0' step='0.01' placeholder='0.00' value='$clamAmount'>
 
-        <label >Email:</label>
-        <input type='email' id='email' name='email' value='$uemail'>
+        <label >claim Description:</label>
+        <input type='text' id='claimDescription' name='claimDescription' value='$claimDis ' >
 
-        <label >Phone:</label>
-        <input type='tel' id='phone' name='phone' value='$uphone'>
+         <label >date:</label>
+        <input type='date' id='date' name='date' value='$clamDate'>
+        
 
-        <label >Address:</label>
-        <input type='text' id='address' name='address' value='$address'>
+         <br>
+        <label for='status'>status:</label>
+        <select id='status' name='status' required value='$claimStatus'>
+            <option value='LEVEL_1'>LEVEL 1</option>
+            <option value='LEVEL_2'>LEVEL 2</option>
+            <option value='LEVEL_3'>LEVEL 3</option>
+        </select>
 
-        <label for='planetype'>Plan type:</label>
-        <select id='planetype' name='planetype' required value='$planeT'>
-            <option value='Family_all'>Family all in one plan</option>
-            <option value='Emergency'>Emergency coverage plan</option>
-            <option value='Elder'>Elder Critizen</option>
-            <option value='complete'>complete coverage</option>
+        <label for='adminId'>admin Id:</label>
+        <select id='adminId' name='adminId' value='$adminId'>
+            <option value='Admin 1'>ADMIN 1</option>
+            <option value='Admin 2'>ADMIN 2</option>
+            <option value='Admin 3'>ADMIN 3</option>
         </select>
 
         <input type='submit' value='Submit'>
         <input type='reset' value='reset'>
         </form>
      </fieldset>";
-
+     
+    
 ?>
-
-
+    
         
 </body>
 </html>

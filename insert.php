@@ -10,7 +10,7 @@
    $sql = "INSERT INTO userdetail VALUES ('','$userName','$userEmail','$userphone' , '$userAdress' ,'$userplanetype')";
 
    if($con->query($sql)){
-    header("Location: http://localhost/admin/in.php");
+    header("Location: table1.php");
     exit(); 
    }
    else{
